@@ -239,9 +239,6 @@ public class BaseController {
 					}
 					msgBuf.append(" to " + getPercVal(val.doubleValue(), 2, 2));
 				}
-			} else if (eventType.equals("HIGH_GC_ACTIVITY")) {
-				eventType = eventType.toLowerCase().replace("_", " ");
-				msgBuf.append(" " + entityName + " " + eventType);
 			} else if (eventType.equals("SLOW_DISK")) {
 				eventType = eventType.toLowerCase().replace("_", " ");
 				String resName = rankedEvent.getString("resourceName");
@@ -252,6 +249,9 @@ public class BaseController {
 			} else if (eventType.equals("HIGH_CONNECTIVITY_FAILURES")) {
 				eventType = eventType.toLowerCase().replace("_", " ");
 				msgBuf.append(" " + entityName + " encountered " + eventType);
+			} else {
+				eventType = eventType.toLowerCase().replace("_", " ");
+				msgBuf.append(" " + entityName + " " + eventType);
 			}
 			if (endTime == null || endTime == -1)
 				msgBuf.append(" since " + formDateTime(startTime) + ".");
