@@ -15,7 +15,6 @@
 package org.ayakaji.msg;
 
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.util.Date;
 import java.util.logging.Logger;
 
